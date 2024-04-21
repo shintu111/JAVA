@@ -1,0 +1,79 @@
+package com.assignment.inheritance;
+
+public abstract class Shape {
+	
+	public double displayArea()
+	{
+		return 0.0;
+	}
+
+}
+
+
+package com.assignment.inheritance;
+
+public class Circle extends Shape{
+	
+	private double r;
+	private double pi=3.14; 
+	private double area =0;
+	
+	public Circle(float r, double pi)
+	{
+		this.r = r;
+		this.pi = pi;
+	}
+	@Override
+	public double displayArea()
+	{
+		return (r*r)*3.14;
+	}
+
+}
+
+
+package com.assignment.inheritance;
+
+public class Rectangle extends Shape{
+	
+	private double length;
+	private double height;
+	
+	public Rectangle(double length, double height)
+	{
+		this.length = length;
+		this.height = height;
+	}
+	
+	@Override
+	public double displayArea()
+	{
+		return (1/2*length*height);
+	}
+	
+
+}
+
+
+
+package com.assignment.inheritance;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Circle  circle = new Circle(2, 3.14);
+		Rectangle rectangle = new Rectangle(3, 5);
+		
+		double	areaOfCircle = circle.displayArea();
+		double areaOfRectangle = rectangle.displayArea();
+	 
+	 System.out.println("Area of Circle is: "+areaOfCircle);
+	 System.out.println("Area of rectangle is: "+areaOfRectangle);
+	}
+
+}
+
+
+
+

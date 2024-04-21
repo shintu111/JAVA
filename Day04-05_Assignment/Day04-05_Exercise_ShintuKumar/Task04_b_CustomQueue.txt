@@ -1,0 +1,198 @@
+package com.assignment.queue;
+
+public class CustomQueue {
+	
+	int queue[] = new int[5];
+	int size;
+	int front;
+	int rear;
+	
+	public void enQueue(int data)
+	{
+		if(!isFull()) 
+		{
+		queue[rear] = data;
+		rear = rear+1;
+		size = size+1;
+		}
+		else
+		{
+			System.out.println("Queue is full");
+		}
+	}
+	
+	public int deQueue()
+	{
+		int data = queue[front];
+		if(!isEmpty()) {
+		front++;
+		size--;}
+		else
+		{
+			System.out.println("Queue is Empty");
+		}
+		return data;
+	}
+	
+	public int peek() {
+		int data;
+		
+		data = queue[front];
+		return data;
+	}
+	
+	public int getSize()
+	{
+		return size;
+	}
+	
+	public boolean isEmpty()
+	{
+		return size==0;
+	}
+	
+	public boolean isFull()
+	{
+		return size==5;
+	}
+	
+	public void show()
+	{
+		System.out.print("Element :");
+		
+		for(int i=0; i<size; i++)
+		{
+			System.out.print(queue[front + i] +" ");
+		}
+	}
+
+}
+
+
+package com.assignment.queue;
+
+public class QueueString {
+	String queue[] = new String[5];
+	int size;
+	int front;
+	int rear;
+	
+	public void enQueue(String data)
+	{
+		if(!isFull()) 
+		{
+		queue[rear] = data;
+		rear = rear+1;
+		size = size+1;
+		}
+		else
+		{
+			System.out.println("Queue is full");
+		}
+	}
+	
+	public String deQueue()
+	{
+		String data = queue[front];
+		if(!isEmpty()) {
+		front++;
+		size--;}
+		else
+		{
+			System.out.println("Queue is Empty");
+		}
+		return data;
+	}
+	
+	public String peek() {
+		String data;
+		
+		data = queue[front];
+		return data;
+	}
+	
+	public int getSize()
+	{
+		return size;
+	}
+	
+	public boolean isEmpty()
+	{
+		return size==0;
+	}
+	
+	public boolean isFull()
+	{
+		return size==5;
+	}
+	
+	public void show()
+	{
+		System.out.print("Element :");
+		
+		for(int i=0; i<size; i++)
+		{
+			System.out.print(queue[front + i] +" ");
+		}
+	}
+
+}
+
+package com.assignment.queue;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		CustomQueue q = new CustomQueue();
+		QueueString qs = new QueueString();
+		
+		System.out.println("Enqueuing String:");
+		
+		qs.enQueue("shintu");
+		qs.enQueue("Kumar");
+		qs.enQueue("Rahul");
+		qs.enQueue("raj");
+		
+		qs.deQueue();
+		qs.deQueue();
+		
+		System.out.println(qs.isEmpty());//queue is empty or not
+		System.out.println(qs.isFull());// queue is full or not
+
+		System.out.println("size: "+qs.getSize());//size of array
+		
+		System.out.println(qs.peek());
+		
+		qs.show();
+		System.out.println(" ");
+		
+		
+		System.out.println("Enqueuing Integer:");
+		q.enQueue(5);
+		q.enQueue(8);
+		q.enQueue(12);
+		q.enQueue(7);
+		q.enQueue(10);
+		//q.enQueue(15);
+		
+		q.deQueue();
+		q.deQueue();
+		
+		
+
+		System.out.println(q.isEmpty());//queue is empty or not
+		System.out.println(q.isFull());// queue is full or not
+
+		System.out.println("size: "+q.getSize());//size of array
+		
+		System.out.println(q.peek());
+		q.show();
+		
+		
+
+	}
+
+}
+
+
