@@ -1,0 +1,49 @@
+package com.assignment;
+
+public class SimpleCalculator {
+
+	public static void main(String[] args) {
+
+		if(args.length !=3)
+		{
+			System.out.println("Usage: java SimpleCalculator <a> <operator> <b>");
+			return ;
+			
+		}
+		
+		double a = Double.parseDouble(args[0]);
+		char operator = args[1].charAt(0);
+		double b = Double.parseDouble(args[2]);
+		double c=0;
+		
+		switch(operator)
+		{
+		
+		case '+':
+			c = a+b;
+			System.out.println("Addition is: "+a +"+"+b +"="+c); 
+		    break;
+		    
+		case '-':
+			c = a-b;
+			System.out.println("Subtraction is: "+a +"-"+b +"="+c); 
+		    break;
+		   
+		case '*':
+			c = a*b;
+			System.out.println("Multiplication  is: "+a +"*"+b +"="+c); 
+		    break;
+		    
+		case '/':
+			c = a/b;
+			System.out.println("Division is: "+a +"/"+b +"="+c); 
+		    break;
+		    
+		default:
+			System.out.println("Invailid operator");
+			return;
+		}
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.assignment;
+
+public class SumArray {
+
+	public static int SumArr(int arr[], int n)
+	{		
+		if(n<=0)
+		{
+			return 0;
+		}
+		
+		return (SumArr(arr, n-1) + arr[n-1]);
+	}
+	
+	
+	public static void main(String[] args) {
+
+		
+			int arr[]= {1,2,3,4,5};
+		
+		System.out.println(SumArr(arr,arr.length));
+		
+		
+	}
+
+
+
+	
+
+}
